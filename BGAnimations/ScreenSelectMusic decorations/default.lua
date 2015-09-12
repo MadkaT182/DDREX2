@@ -191,20 +191,22 @@ end
 
 --t[#t+1] = StandardDecorationFromFileOptional("DifficultyDisplay","DifficultyDisplay");
 
-t[#t+1] = StandardDecorationFromFileOptional("SortOrder","SortOrderText") .. {
-	BeginCommand=cmd(playcommand,"Set");
-	SortOrderChangedMessageCommand=cmd(playcommand,"Set");
-	SetCommand=function(self)
-		local s = GAMESTATE:GetSortOrder()
-		if s ~= nil then
-			local s = SortOrderToLocalizedString( s )
-			self:settext( s )
-			self:playcommand("Sort")
-		else
-			return
-		end
-	end;
-};
+t[#t+1] = StandardDecorationFromFile("SortDisplay","SortDisplay");
+
+-- t[#t+1] = StandardDecorationFromFileOptional("SortOrder","SortOrderText") .. {
+-- 	BeginCommand=cmd(playcommand,"Set");
+-- 	SortOrderChangedMessageCommand=cmd(playcommand,"Set");
+-- 	SetCommand=function(self)
+-- 		local s = GAMESTATE:GetSortOrder()
+-- 		if s ~= nil then
+-- 			local s = SortOrderToLocalizedString( s )
+-- 			self:settext( s )
+-- 			self:playcommand("Sort")
+-- 		else
+-- 			return
+-- 		end
+-- 	end;
+-- };
 
 -- Sounds
 t[#t+1] = Def.ActorFrame {
