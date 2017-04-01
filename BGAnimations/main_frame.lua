@@ -1,5 +1,5 @@
 return Def.ActorFrame {
 	LoadActor("banner")..{
-	OnCommand=cmd(x,SCREEN_LEFT+188;y,SCREEN_BOTTOM-208);
+	OnCommand=cmd(x,SCREEN_LEFT+200;y,SCREEN_BOTTOM-221);
 	};
 };
