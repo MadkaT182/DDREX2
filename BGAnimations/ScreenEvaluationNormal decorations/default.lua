@@ -98,4 +98,10 @@ t[#t+1] = Def.ActorFrame {
 }
 end
 
+--Footer
+t[#t+1] = LoadActor("../_footer/resultn")..{
+	OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-34);
+	OffCommand=cmd();
+};
+
 return t;
