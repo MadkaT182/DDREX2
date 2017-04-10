@@ -8,4 +8,7 @@ return Def.ActorFrame {
 	LoadActor("bemani")..{
 		OnCommand=cmd(Center;diffusealpha,0;sleep,6.4;decelerate,0.6;diffusealpha,1;sleep,5.2;accelerate,0.6;diffusealpha,0);
 	};
+	Def.Quad{
+		OnCommand=cmd(FullScreen;diffusecolor,Color.Black;linear,.5;diffusealpha,0;sleep,11.8;linear,.5;diffusealpha,1);
+	};
 }
