@@ -12,6 +12,8 @@ t[#t+1] = Def.ActorFrame {
 
 t[#t+1] = Def.ActorFrame {
 	LoadActor(THEME:GetPathG("_SelectInfo",gc:GetName() )) .. {
+		GainFocusCommand=cmd(stoptweening;playcommand,"On";sleep,0;linear,.5;addx,-27);
+		LoseFocusCommand=cmd(stoptweening;playcommand,"On";sleep,0;linear,.5;addx,27);
 	};
 };
 
