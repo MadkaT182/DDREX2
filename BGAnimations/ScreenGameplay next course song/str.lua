@@ -1,0 +1,26 @@
+return Def.ActorFrame{
+	LoadActor(THEME:GetPathB("ScreenGameplay","out/RightToLeft"))..{
+		InitCommand=cmd(x,64;y,-224);
+	};
+	LoadActor(THEME:GetPathB("ScreenGameplay","out/RightToLeft"))..{
+		InitCommand=cmd(x,128;y,-160);
+	};
+	LoadActor(THEME:GetPathB("ScreenGameplay","out/RightToLeft"))..{
+		InitCommand=cmd(x,192;y,-96);
+	};
+	LoadActor(THEME:GetPathB("ScreenGameplay","out/RightToLeft"))..{
+		InitCommand=cmd(x,256;y,-32);
+	};
+	LoadActor(THEME:GetPathB("ScreenGameplay","out/RightToLeft"))..{
+		InitCommand=cmd(x,256;y,32);
+	};
+	LoadActor(THEME:GetPathB("ScreenGameplay","out/RightToLeft"))..{
+		InitCommand=cmd(x,192;y,96);
+	};
+	LoadActor(THEME:GetPathB("ScreenGameplay","out/RightToLeft"))..{
+		InitCommand=cmd(x,128;y,160);
+	};
+	LoadActor(THEME:GetPathB("ScreenGameplay","out/RightToLeft"))..{
+		InitCommand=cmd(x,64;y,224);
+	};
+}
