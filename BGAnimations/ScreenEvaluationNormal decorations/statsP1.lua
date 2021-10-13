@@ -73,14 +73,16 @@ t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 };
 --Point Label
 t[#t+1] = LoadActor("lblpoint")..{
-	InitCommand=cmd(addx,-90;addy,224;);
+	InitCommand=cmd(x,-90;y,337;decelerate,.2;y,224);
+	OffCommand=cmd(accelerate,.167;y,440);
 };
 --EX Score
 t[#t+1] = LoadFont("ScreenEvaluation points")..{
-	InitCommand=cmd(player,PLAYER_1;y,SCREEN_CENTER_Y+6;addx,-94;horizalign,right);
+	InitCommand=cmd(player,PLAYER_1;y,SCREEN_CENTER_Y+109;x,-94;decelerate,.2;y,SCREEN_CENTER_Y+6;horizalign,right);
 	OnCommand=function(self)
 		self:settextf(EXScore);
 	end;
+	OffCommand=cmd(accelerate,.167;y,SCREEN_CENTER_Y+325);
 };
 --Black square
 t[#t+1] = Def.ActorFrame {
@@ -94,7 +96,7 @@ t[#t+1] = LoadActor("pl1")..{
 };
 --Ring
 t[#t+1] = LoadActor("ring")..{
-	InitCommand=cmd(addx,-186;addy,144;spin);
+	InitCommand=cmd(addx,-186;addy,144;spin;effectmagnitude,0,0,30);
 };
 --Num1
 t[#t+1] = LoadActor("num1")..{
