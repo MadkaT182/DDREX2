@@ -1,0 +1,26 @@
+return Def.ActorFrame{
+	Def.Quad{
+		InitCommand=cmd(zoomto,SCREEN_WIDTH*2,32;x,64;y,-224;diffuse,color("#FFFFFF");blend,'BlendMode_NoEffect';zwrite,true);
+	};
+	Def.Quad{
+		InitCommand=cmd(zoomto,SCREEN_WIDTH*2,32;x,128;y,-160;diffuse,color("#FFFFFF");blend,'BlendMode_NoEffect';zwrite,true);
+	};
+	Def.Quad{
+		InitCommand=cmd(zoomto,SCREEN_WIDTH*2,32;x,192;y,-96;diffuse,color("#FFFFFF");blend,'BlendMode_NoEffect';zwrite,true);
+	};
+	Def.Quad{
+		InitCommand=cmd(zoomto,SCREEN_WIDTH*2,32;x,256;y,-32;diffuse,color("#FFFFFF");blend,'BlendMode_NoEffect';zwrite,true);
+	};
+	Def.Quad{
+		InitCommand=cmd(zoomto,SCREEN_WIDTH*2,32;x,256;y,32;diffuse,color("#FFFFFF");blend,'BlendMode_NoEffect';zwrite,true);
+	};
+	Def.Quad{
+		InitCommand=cmd(zoomto,SCREEN_WIDTH*2,32;x,192;y,96;diffuse,color("#FFFFFF");blend,'BlendMode_NoEffect';zwrite,true);
+	};
+	Def.Quad{
+		InitCommand=cmd(zoomto,SCREEN_WIDTH*2,32;x,128;y,160;diffuse,color("#FFFFFF");blend,'BlendMode_NoEffect';zwrite,true);
+	};
+	Def.Quad{
+		InitCommand=cmd(zoomto,SCREEN_WIDTH*2,32;x,64;y,224;diffuse,color("#FFFFFF");blend,'BlendMode_NoEffect';zwrite,true);
+	};
+}

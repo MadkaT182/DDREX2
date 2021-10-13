@@ -1,0 +1,26 @@
+return Def.ActorFrame{
+	LoadActor("RightToLeft")..{
+		InitCommand=cmd(x,64;y,-224);
+	};
+	LoadActor("RightToLeft")..{
+		InitCommand=cmd(x,128;y,-160);
+	};
+	LoadActor("RightToLeft")..{
+		InitCommand=cmd(x,192;y,-96);
+	};
+	LoadActor("RightToLeft")..{
+		InitCommand=cmd(x,256;y,-32);
+	};
+	LoadActor("RightToLeft")..{
+		InitCommand=cmd(x,256;y,32);
+	};
+	LoadActor("RightToLeft")..{
+		InitCommand=cmd(x,192;y,96);
+	};
+	LoadActor("RightToLeft")..{
+		InitCommand=cmd(x,128;y,160);
+	};
+	LoadActor("RightToLeft")..{
+		InitCommand=cmd(x,64;y,224);
+	};
+}
