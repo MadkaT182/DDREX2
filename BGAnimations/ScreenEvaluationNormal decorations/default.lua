@@ -66,10 +66,12 @@ end
 t[#t+1] = Def.ActorFrame {
 	LoadActor("NewRecord")..{
 		OnCommand=cmd(player,PLAYER_1;glowshift;effectcolor1,1,1,0,.5;effectcolor2,1,1,0,0;effectperiod,.5;x,SCREEN_LEFT-212;y,SCREEN_CENTER_Y+113;sleep,.868;decelerate,.2;x,SCREEN_CENTER_X-212);
+		OffCommand=cmd(visible,false);
 		Condition=NewRec1 == 1
 	};
 	LoadActor("NewRecord")..{
 		OnCommand=cmd(player,PLAYER_2;glowshift;effectcolor1,1,1,0,.5;effectcolor2,1,1,0,0;effectperiod,.5;x,SCREEN_RIGHT+212;y,SCREEN_CENTER_Y+113;sleep,.868;decelerate,.2;x,SCREEN_CENTER_X+113);
+		OffCommand=cmd(visible,false);
 		Condition=NewRec2 == 1
 	};
 };
