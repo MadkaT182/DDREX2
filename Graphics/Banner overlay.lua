@@ -38,7 +38,7 @@ return Def.ActorFrame {
 				if mType == "WheelItemDataType_Roulette" then
 					c.SRoulette:diffusealpha(1);
 					c.SRandom:diffusealpha(0);
-				elseif mType == "WheelItemDataType_Random" then
+				elseif mType == "WheelItemDataType_Custom" then
 					c.SRoulette:diffusealpha(0);
 					c.SRandom:diffusealpha(1);
 				else

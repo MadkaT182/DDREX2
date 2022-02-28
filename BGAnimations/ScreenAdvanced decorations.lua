@@ -1,0 +1,22 @@
+return Def.ActorFrame{
+	Def.ActorFrame{
+		OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_BOTTOM+21;sleep,.934;decelerate,.1;y,SCREEN_BOTTOM-21);
+		OffCommand=cmd(accelerate,.1;y,SCREEN_BOTTOM+21);
+		LoadActor(THEME:GetPathG("Common","button/arrow_left"))..{
+			OnCommand=cmd(x,-107);
+		};
+		LoadActor(THEME:GetPathG("Common","button/arrow_right"))..{
+			OnCommand=cmd(x,-91);
+		};
+		LoadActor(THEME:GetPathG("Common","button/lbl_select"))..{
+			OnCommand=cmd(x,-25);
+		};
+		LoadActor(THEME:GetPathG("Common","button/btn_cross"))..{
+			OnCommand=cmd(x,41);
+		};
+		LoadActor(THEME:GetPathG("Common","button/lbl_confirm"))..{
+			OnCommand=cmd(x,110);
+		};
+	};
+	LoadActor(THEME:GetPathG("","_header"));
+}

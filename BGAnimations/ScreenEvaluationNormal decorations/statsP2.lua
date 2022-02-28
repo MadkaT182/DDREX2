@@ -1,16 +1,15 @@
 local t = Def.ActorFrame {};
 
-local Space = '    ';
-local Combo = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):MaxCombo(), -4);
+local Combo = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):MaxCombo());
 
-local Marvelous = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W1"), -4);
-local Perfect = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W2"), -4);
-local Great = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W3"), -4);
-local Good = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W4"), -4);
-local Almost = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W5"), -4);
-local Ok = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetHoldNoteScores("HoldNoteScore_Held"), -4);
-local Ng = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetHoldNoteScores("HoldNoteScore_LetGo"), -4);
-local Boo = string.sub(Space..STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_Miss"), -4);
+local Marvelous = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W1"));
+local Perfect = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W2"));
+local Great = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W3"));
+local Good = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W4"));
+local Almost = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_W5"));
+local Ok = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetHoldNoteScores("HoldNoteScore_Held"));
+local Ng = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetHoldNoteScores("HoldNoteScore_LetGo"));
+local Boo = string.format("% 4d",STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetTapNoteScores("TapNoteScore_Miss"));
 
 local EXScore = (Marvelous * 3) + (Perfect * 2) + Great + (Ok * 3);
 local score = STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetScore();
@@ -19,56 +18,56 @@ local score = STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_2):GetScore
 t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 	InitCommand=cmd(player,PLAYER_2;y,SCREEN_CENTER_Y-241;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(Marvelous);
+		self:settext(Marvelous);
 	end;
 };
 --Perfect--
 t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 	InitCommand=cmd(player,PLAYER_2;y,SCREEN_CENTER_Y-220;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(Perfect);
+		self:settext(Perfect);
 	end;
 };
 --Great--
 t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 	InitCommand=cmd(player,PLAYER_2;y,SCREEN_CENTER_Y-199;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(Great);
+		self:settext(Great);
 	end;
 };
 --Good--
 t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 	InitCommand=cmd(player,PLAYER_2;y,SCREEN_CENTER_Y-178;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(Good);
+		self:settext(Good);
 	end;
 };
 --Almost--
 t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 	InitCommand=cmd(player,PLAYER_2;y,SCREEN_CENTER_Y-157;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(Almost);
+		self:settext(Almost);
 	end;
 };
 --Boo--
 t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 	InitCommand=cmd(player,PLAYER_2;y,SCREEN_CENTER_Y-136;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(Boo);
+		self:settext(Boo);
 	end;
 };
 --Ok--
 t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 	InitCommand=cmd(player,PLAYER_2;y,SCREEN_CENTER_Y-115;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(Ok);
+		self:settext(Ok);
 	end;
 };
 --Max Combo--
 t[#t+1] = LoadFont("ScreenEvaluation judge")..{
 	InitCommand=cmd(player,PLAYER_2;y,SCREEN_CENTER_Y-94;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(Combo);
+		self:settext(Combo);
 	end;
 };
 --Point Label
@@ -79,7 +78,7 @@ t[#t+1] = LoadActor("lblpoint")..{
 t[#t+1] = LoadFont("ScreenEvaluation points")..{
 	InitCommand=cmd(player,PLAYER_1;y,SCREEN_CENTER_Y+6;addx,116;horizalign,right);
 	OnCommand=function(self)
-		self:settextf(EXScore);
+		self:settext(EXScore);
 	end;
 };
 --Black square
@@ -108,7 +107,7 @@ t[#t+1] = LoadActor("scorelbl")..{
 t[#t+1] = LoadFont("ScreenEvaluation ScoreNumber")..{
 	InitCommand=cmd(y,SCREEN_CENTER_Y-64;addx,172;diffusecolor,color("#FDFD00");horizalign,right);
 	OnCommand=function(self)
-		self:settextf(score);
+		self:settext(score);
 	end;
 };
 return t;

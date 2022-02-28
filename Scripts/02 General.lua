@@ -13,3 +13,9 @@ function GetSortName()
 	local name = sortList[ThemePrefs.Get("DefSort")] or "Preferred";
 	return name;
 end
+
+--Clear env data
+function ClearEnv()
+	setenv("advMode",null);
+	setenv("advLives",null);
+end

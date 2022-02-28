@@ -1,4 +1,5 @@
 local t = Def.ActorFrame {};
+ClearEnv()
 
 if GAMESTATE:GetCoinMode() ~= 'CoinMode_Home' then
 	t[#t+1] = Def.ActorFrame {

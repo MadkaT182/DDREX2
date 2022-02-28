@@ -21,16 +21,26 @@ local t = Def.ActorFrame {
 		Name="Label";
 		OnCommand=THEME:GetMetric("Combo", "LabelOnCommand");
 	};
+	LoadFont("Challenge","Combo")..{
+		Name="ChNumber";
+		OnCommand=THEME:GetMetric("ChallengeCombo", "NumberOnCommand");	
+	};
+	LoadActor("_ch_combo")..{
+		Name="ChLabel";
+		OnCommand=THEME:GetMetric("ChallengeCombo", "LabelOnCommand");	
+	};
 
 	InitCommand = function(self)
 		c = self:GetChildren();
 		c.Number:visible(false);
 		c.Label:visible(false);
+		c.ChNumber:visible(false);
+		c.ChLabel:visible(false);
 	end;
 
 	ComboCommand=function(self, param)
 		local iCombo = param.Combo;
-		if not iCombo or iCombo < ShowComboAt then
+		if not iCombo or iCombo < ShowComboAt or getenv("advMode") == "Survival" then
 			c.Number:visible(false);
 			c.Label:visible(false);
 			return;
@@ -44,13 +54,21 @@ local t = Def.ActorFrame {
 		param.LabelZoom = scale( iCombo, 0, NumberMaxZoomAt, LabelMinZoom, LabelMaxZoom );
 		param.LabelZoom = clamp( param.LabelZoom, LabelMinZoom, LabelMaxZoom );
 
-		c.Number:visible(true);
-		c.Label:visible(true);
-		c.Number:settext( string.format("%i", iCombo) );
-
+		if getenv("advMode") == "Comboch" then
+			c.ChNumber:visible(true);
+			c.ChLabel:visible(true);
+			c.ChNumber:settext( string.format("%i", iCombo) );
+		else
+			c.Number:visible(true);
+			c.Label:visible(true);
+			c.Number:settext( string.format("%i", iCombo) );
+		end
+		
 		-- Pulse
 		Pulse( c.Number, param );
 		PulseLabel( c.Label, param );
+		Pulse( c.ChNumber, param );
+		PulseLabel( c.ChLabel, param );
 	end;
 };
 
