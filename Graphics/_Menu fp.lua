@@ -1,18 +1,7 @@
-local xPos=0;
-local xInit=0;
-local t = Def.ActorFrame {};
+local xPos = IsUsingWideScreen() and -162 or -55;
+local xInit = SCREEN_LEFT-380;
 
-if IsUsingWideScreen() == true then
-	xPos = -162;
-	xInit = SCREEN_LEFT-380;
-else
-	--TODO ^_^
-	xPos = 0;
-	xInit = 0;
-end
-
---Option List
-t[#t+1] = Def.ActorFrame {
+return Def.ActorFrame {
 	LoadActor("_menu/_op/dm")..{
 		OnCommand=cmd(x,xInit;y,-127;sleep,.167;linear,.167;x,xPos);
 		OffCommand=cmd(sleep,.167;linear,.167;x,xInit);
@@ -65,35 +54,23 @@ t[#t+1] = Def.ActorFrame {
 		OnCommand=cmd(x,xInit;y,197;sleep,.451;linear,.167;x,xPos);
 		OffCommand=cmd(sleep,.451;linear,.167;x,xInit);
 	};
+	LoadActor("_menu/_tit/fp")..{
+		OnCommand=cmd(x,SCREEN_RIGHT+188;y,143;sleep,.234;linear,.2;x,261;);
+		OffCommand=cmd(sleep,.08;linear,.184;x,SCREEN_RIGHT+188);
+	};
+	LoadActor("_menu/_desc/fp")..{
+		OnCommand=cmd(x,SCREEN_RIGHT+188;y,189;sleep,.301;linear,.2;x,251);
+		OffCommand=cmd(sleep,.01;linear,.184;x,SCREEN_RIGHT+188);
+	};
+	LoadActor("_menu/_art/fp")..{
+		OnCommand=cmd(x,259;y,-12;diffusealpha,0;sleep,.251;linear,.116;diffusealpha,1);
+		OffCommand=cmd(sleep,.116;linear,.151;diffusealpha,0);
+	};
+	LoadActor("_menu/frame")..{
+		OnCommand=cmd(x,272;y,2;diffusealpha,0;sleep,.1;linear,.133;diffusealpha,1);
+		OffCommand=cmd(sleep,.267;linear,.116;diffusealpha,0);
+	};
+	LoadActor("_menu/cursor")..{
+		OnCommand=cmd(x,xPos-97;y,-101);
+	};
 };
-
---Title
-t[#t+1] = LoadActor("_menu/_tit/fp")..{
-	OnCommand=cmd(x,SCREEN_RIGHT+188;y,143;sleep,.234;linear,.2;x,261;);
-	OffCommand=cmd(sleep,.08;linear,.184;x,SCREEN_RIGHT+188);
-};
-
---Description
-t[#t+1] = LoadActor("_menu/_desc/fp")..{
-	OnCommand=cmd(x,SCREEN_RIGHT+188;y,189;sleep,.301;linear,.2;x,251);
-	OffCommand=cmd(sleep,.01;linear,.184;x,SCREEN_RIGHT+188);
-};
-
---Art
-t[#t+1] = LoadActor("_menu/_art/fp")..{
-	OnCommand=cmd(x,259;y,-12;diffusealpha,0;sleep,.251;linear,.116;diffusealpha,1);
-	OffCommand=cmd(sleep,.116;linear,.151;diffusealpha,0);
-};
-
---Frame
-t[#t+1] = LoadActor("_menu/frame")..{
-	OnCommand=cmd(x,272;y,2;diffusealpha,0;sleep,.1;linear,.133;diffusealpha,1);
-	OffCommand=cmd(sleep,.267;linear,.116;diffusealpha,0);
-};
-
---Cursor
-t[#t+1] = LoadActor("_menu/cursor")..{
-	OnCommand=cmd(x,xPos-97;y,-101);
-};
-
-return t;

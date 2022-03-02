@@ -155,7 +155,7 @@ for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
 				OffCommand=cmd(visible,false);
 			};
 			Def.ActorFrame{
-				InitCommand=cmd(x,-181;zoomx,pn == PLAYER_1 and 1 or -1);
+				InitCommand=cmd(x,IsUsingWideScreen() and -181 or -128;zoomx,pn == PLAYER_1 and 1 or -1);
 				LoadActor(pn == PLAYER_1 and "_life/p1ring" or "_life/p2ring")..{
 					OnCommand=cmd(spin);
 				};
